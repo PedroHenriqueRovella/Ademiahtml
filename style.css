@@ -1,0 +1,568 @@
+/* ================================================
+   GENIUS GYM — style.css
+   Paleta: Preto #0a0a0a | Laranja #ff6a00 | Prata #c0c0c0 | Branco #ffffff
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap');
+
+/* ── Reset & Base ──────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black:       #0a0a0a;
+  --black-mid:   #111111;
+  --black-card:  #1a1a1a;
+  --orange:      #ff6a00;
+  --orange-glow: #ff8c00;
+  --silver:      #c0c0c0;
+  --silver-light:#e8e8e8;
+  --white:       #ffffff;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Rajdhani', sans-serif;
+  --transition:   0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--silver-light);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black-mid); }
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+/* ── HEADER ────────────────────────────────────── */
+header {
+  position: relative;
+  background: var(--black-mid);
+  text-align: center;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 3px solid var(--orange);
+  overflow: hidden;
+}
+
+/* Fundo com padrão diagonal sutil */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 30px,
+    rgba(255,106,0,0.03) 30px,
+    rgba(255,106,0,0.03) 31px
+  );
+  pointer-events: none;
+}
+
+/* Brilho laranja no topo */
+header::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(255,106,0,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--white);
+  text-shadow:
+    0 0 20px rgba(255,106,0,0.6),
+    0 0 60px rgba(255,106,0,0.2);
+  position: relative;
+  z-index: 1;
+
+  /* Gradiente metálico no texto */
+  background: linear-gradient(180deg, #ffffff 30%, #c0c0c0 70%, #ff6a00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── NAV ───────────────────────────────────────── */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,106,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+nav a {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  color: var(--silver);
+  text-decoration: none;
+  padding: 1.1rem 2.2rem;
+  position: relative;
+  transition: color var(--transition);
+  text-transform: uppercase;
+}
+
+/* Linha laranja animada no hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 3px;
+  background: var(--orange);
+  box-shadow: 0 0 10px var(--orange);
+  border-radius: 2px 2px 0 0;
+  transition: transform var(--transition);
+}
+
+nav a:hover {
+  color: var(--white);
+}
+
+nav a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Separador entre links */
+nav a + a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255,106,0,0.2);
+}
+
+/* ── MAIN ──────────────────────────────────────── */
+main {
+  max-width: 900px;
+  margin: 3.5rem auto;
+  padding: 2.5rem 2rem;
+  background: var(--black-card);
+  border: 1px solid rgba(192,192,192,0.1);
+  border-top: 3px solid var(--orange);
+  border-radius: 4px;
+  position: relative;
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+/* Detalhe de canto superior esquerdo */
+main::before {
+  content: '★★★';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--orange);
+  opacity: 0.6;
+}
+
+main h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Sublinhado laranja decorativo */
+main h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin-top: 0.4rem;
+  background: linear-gradient(90deg, var(--orange), transparent);
+  border-radius: 2px;
+}
+
+main p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--silver);
+  line-height: 1.8;
+  max-width: 65ch;
+}
+
+/* ── SECTION EXTRAS (caso o HTML seja expandido) ─ */
+section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(192,192,192,0.08);
+}
+
+section h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  margin-bottom: 0.6rem;
+}
+
+/* Botões genéricos */
+button, .btn {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: var(--black);
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-glow) 100%);
+  border: none;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(255,106,0,0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,106,0,0.55);
+}
+
+/* Links simples dentro do main */
+main a {
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,106,0,0.3);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+main a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* ── FOOTER ────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.8rem 2rem;
+  background: var(--black-mid);
+  border-top: 3px solid var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(255,106,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+footer p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(192,192,192,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+footer p span {
+  color: var(--orange);
+}
+
+/* ════════════════════════════════════════════════
+   PÁGINA TREINOS — Seção de Vídeos
+   Uso no HTML:
+     <section class="treinos-section">
+       <h2 class="treinos-titulo">Treinos em Destaque</h2>
+       <p class="treinos-subtitulo">Assista e treine com os melhores</p>
+
+       <div class="video-grid">
+
+         <div class="video-card">
+           <div class="video-wrapper">
+             <iframe src="URL_DO_VIDEO" allowfullscreen></iframe>
+           </div>
+           <div class="video-info">
+             <span class="video-tag">Peito</span>
+             <h3 class="video-title">Treino de Peito Avançado</h3>
+             <p class="video-desc">Exercícios para hipertrofia máxima.</p>
+           </div>
+         </div>
+
+         <!-- repita .video-card para cada vídeo -->
+       </div>
+     </section>
+   ════════════════════════════════════════════════ */
+
+/* ── Seção container de treinos ─────────────────── */
+.treinos-section {
+  max-width: 1200px;
+  margin: 3.5rem auto;
+  padding: 0 1.5rem;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+.treinos-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.12em;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 0.4rem;
+  position: relative;
+  display: block;
+
+  background: linear-gradient(180deg, #ffffff 30%, #c0c0c0 70%, #ff6a00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.treinos-titulo::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  background: linear-gradient(90deg, var(--orange), var(--orange-glow));
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(255,106,0,0.5);
+}
+
+.treinos-subtitulo {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 2.8rem;
+}
+
+/* ── Grid de vídeos ─────────────────────────────── */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+/* ── Card individual ────────────────────────────── */
+.video-card {
+  background: var(--black-card);
+  border: 1px solid rgba(192,192,192,0.08);
+  border-top: 3px solid var(--orange);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,106,0,0.3),
+    0 0 30px rgba(255,106,0,0.08);
+}
+
+/* ── Wrapper responsivo do iframe (16:9) ────────── */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+  overflow: hidden;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Overlay laranja sutil ao hover do card */
+.video-card:hover .video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,106,0,0.04);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Info do vídeo ──────────────────────────────── */
+.video-info {
+  padding: 1.1rem 1.3rem 1.3rem;
+}
+
+.video-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--orange);
+  padding: 0.15rem 0.65rem;
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.video-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.video-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--silver);
+  line-height: 1.5;
+  max-width: none;
+}
+
+/* ── Filtros de categoria (opcional) ────────────── */
+.treinos-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.2rem;
+}
+
+.filtro-btn {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  background: transparent;
+  border: 1px solid rgba(192,192,192,0.2);
+  padding: 0.45rem 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: none;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+  color: var(--black);
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 4px 14px rgba(255,106,0,0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Animação de entrada ───────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+header  { animation: fadeUp 0.7s ease both; }
+nav     { animation: fadeUp 0.7s 0.15s ease both; }
+main    { animation: fadeUp 0.7s 0.3s ease both; }
+footer  { animation: fadeUp 0.7s 0.45s ease both; }
+
+/* ── Responsivo ────────────────────────────────── */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    position: static;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1rem;
+  }
+
+  nav a + a::before { display: none; }
+
+  main {
+    margin: 1.5rem 1rem;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .treinos-section {
+    margin: 1.5rem 0;
+    padding: 0 0.8rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .treinos-filtros {
+    gap: 0.4rem;
+  }
+
+  .filtro-btn {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
