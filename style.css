@@ -1,152 +1,238 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600&display=swap');
+/* GENIUS GYM - style.css */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* BODY */
 body {
-  background: #0a0a0a;
-  color: #c0c0c0;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1rem;
+    background-color: #0a0a0a;
+    color: #c0c0c0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
 }
 
 /* HEADER */
 header {
-  background: #111;
-  text-align: center;
-  padding: 2.5rem 1rem;
-  border-bottom: 3px solid #1a6fff;
+    background-color: #111111;
+    text-align: center;
+    padding: 40px;
+    border-bottom: 3px solid #1a6fff;
 }
 
 header h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  letter-spacing: 0.1em;
-  color: #fff;
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 header p {
-  color: #3d8bff;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
+    color: #1a6fff;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 8px;
 }
 
 /* NAV */
 nav {
-  display: flex;
-  justify-content: center;
-  background: #0a0a0a;
-  border-bottom: 2px solid rgba(26,111,255,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background-color: #0a0a0a;
+    text-align: center;
+    padding: 0;
+    border-bottom: 2px solid #1a6fff;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
 }
 
 nav a {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.15em;
-  color: #c0c0c0;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  transition: color 0.2s;
+    display: inline-block;
+    color: #c0c0c0;
+    text-decoration: none;
+    padding: 16px 30px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-nav a:hover { color: #1a6fff; }
+nav a:hover {
+    background-color: #1a6fff;
+    color: #ffffff;
+}
 
 /* MAIN */
 main {
-  max-width: 860px;
-  margin: 2.5rem auto;
-  padding: 2rem;
-  background: #161616;
-  border-top: 3px solid #1a6fff;
-  border-radius: 4px;
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #161616;
+    padding: 30px;
+    border-top: 3px solid #1a6fff;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 4px;
+    box-shadow: 4px 4px 20px #000000;
 }
 
 main h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  color: #fff;
-  margin-bottom: 0.8rem;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-left: 4px solid #1a6fff;
+    padding-left: 12px;
 }
 
-/* TREINOS — GRID DE VÍDEOS
-   HTML: <section class="treinos">
-           <div class="video-grid">
-             <div class="video-card">
-               <div class="video-wrapper">
-                 <iframe src="youtube..." allowfullscreen></iframe>
-               </div>
-               <p>Descrição do treino</p>
-             </div>
-           </div>
-         </section>
-*/
-.treinos { max-width: 1100px; margin: 2.5rem auto; padding: 0 1rem; }
+main p {
+    color: #c0c0c0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+main a {
+    color: #1a6fff;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* SECAO TREINOS */
+.treinos {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
 
 .treinos h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  color: #fff;
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid #1a6fff;
-  padding-left: 0.8rem;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    border-left: 4px solid #1a6fff;
+    padding-left: 12px;
 }
 
+/* GRID DE VIDEOS */
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
+    display: inline-block;
+    width: 100%;
 }
 
 .video-card {
-  background: #161616;
-  border-top: 3px solid #1a6fff;
-  border-radius: 4px;
-  overflow: hidden;
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    background-color: #161616;
+    border-top: 3px solid #1a6fff;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 4px;
+    box-shadow: 3px 3px 12px #000000;
+    overflow: hidden;
 }
 
-.video-card:hover { opacity: 0.9; }
+.video-card:hover {
+    opacity: 0.85;
+}
 
+/* Wrapper 16:9 */
 .video-wrapper {
-  position: relative;
-  padding-top: 56.25%;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    background-color: #000;
 }
 
 .video-wrapper iframe,
 .video-wrapper video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .video-card p {
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
-  color: #c0c0c0;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #c0c0c0;
+}
+
+/* clearfix para float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* BOTAO */
+button {
+    background-color: #1a6fff;
+    color: #ffffff;
+    border-style: none;
+    padding: 12px 28px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #3d8bff;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #111;
-  border-top: 3px solid #1a6fff;
-  color: rgba(192,192,192,0.4);
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+    background-color: #111111;
+    text-align: center;
+    padding: 25px;
+    border-top: 3px solid #1a6fff;
+    color: #555555;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  nav { flex-direction: column; }
-  nav a { text-align: center; }
-  main { margin: 1rem; }
-  .video-grid { grid-template-columns: 1fr; }
+/* RESPONSIVO */
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        padding: 12px;
+    }
+
+    main {
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .treinos {
+        width: 95%;
+    }
+
+    .video-card {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
 }
