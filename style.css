@@ -1,315 +1,119 @@
-/* ================================================
-   GENIUS GYM — style.css
-   Paleta: Preto #0a0a0a | Azul #1a6fff | Prata #c0c0c0 | Branco #ffffff
-   ================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --black:   #0a0a0a;
-  --dark:    #111111;
-  --card:    #161616;
-  --blue:    #1a6fff;
-  --blue2:   #3d8bff;
-  --silver:  #c0c0c0;
-  --white:   #ffffff;
-  --display: 'Bebas Neue', sans-serif;
-  --body:    'Rajdhani', sans-serif;
-}
-
-html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: var(--black);
-  color: var(--silver);
-  font-family: var(--body);
+  background: #0a0a0a;
+  color: #c0c0c0;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
-  line-height: 1.7;
-  overflow-x: hidden;
 }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
-
-/* ── HEADER ─────────────────────────────────────── */
+/* HEADER */
 header {
-  background: var(--dark);
+  background: #111;
   text-align: center;
-  padding: 3rem 1.5rem 2rem;
-  border-bottom: 3px solid var(--blue);
+  padding: 2.5rem 1rem;
+  border-bottom: 3px solid #1a6fff;
 }
 
 header h1 {
-  font-family: var(--display);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
   letter-spacing: 0.1em;
-  background: linear-gradient(180deg, #ffffff 20%, #c0c0c0 60%, #1a6fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
 }
 
 header p {
-  font-family: var(--body);
-  font-size: 0.9rem;
-  font-weight: 600;
+  color: #3d8bff;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--blue2);
-  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
 }
 
-/* ── NAV ─────────────────────────────────────────── */
+/* NAV */
 nav {
   display: flex;
   justify-content: center;
-  background: var(--black);
-  border-bottom: 1px solid rgba(26,111,255,0.25);
+  background: #0a0a0a;
+  border-bottom: 2px solid rgba(26,111,255,0.2);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.7);
 }
 
 nav a {
-  font-family: var(--display);
-  font-size: 1.15rem;
+  font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.15em;
-  color: var(--silver);
+  color: #c0c0c0;
   text-decoration: none;
   padding: 1rem 2rem;
-  position: relative;
-  transition: color 0.25s;
+  transition: color 0.2s;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 70%;
-  height: 3px;
-  background: var(--blue);
-  box-shadow: 0 0 8px var(--blue);
-  transition: transform 0.25s;
-}
+nav a:hover { color: #1a6fff; }
 
-nav a:hover { color: var(--white); }
-nav a:hover::after { transform: translateX(-50%) scaleX(1); }
-
-/* ── MAIN ─────────────────────────────────────────── */
+/* MAIN */
 main {
   max-width: 860px;
-  margin: 3rem auto;
-  padding: 2rem 1.8rem;
-  background: var(--card);
-  border: 1px solid rgba(26,111,255,0.12);
-  border-top: 3px solid var(--blue);
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #161616;
+  border-top: 3px solid #1a6fff;
   border-radius: 4px;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
 
 main h2 {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
   letter-spacing: 0.1em;
-  color: var(--white);
+  color: #fff;
   margin-bottom: 0.8rem;
 }
 
-main h2::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  margin-top: 0.4rem;
-  background: var(--blue);
-  border-radius: 2px;
-}
+/* TREINOS — GRID DE VÍDEOS
+   HTML: <section class="treinos">
+           <div class="video-grid">
+             <div class="video-card">
+               <div class="video-wrapper">
+                 <iframe src="youtube..." allowfullscreen></iframe>
+               </div>
+               <p>Descrição do treino</p>
+             </div>
+           </div>
+         </section>
+*/
+.treinos { max-width: 1100px; margin: 2.5rem auto; padding: 0 1rem; }
 
-main p {
-  color: var(--silver);
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-main a {
-  color: var(--blue2);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(61,139,255,0.3);
-  transition: color 0.2s, border-color 0.2s;
-}
-
-main a:hover {
-  color: var(--white);
-  border-color: var(--white);
-}
-
-/* ── BOTÃO ─────────────────────────────────────────── */
-button, .btn {
-  font-family: var(--display);
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  color: var(--white);
-  background: var(--blue);
-  border: none;
-  padding: 0.7rem 1.8rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(26,111,255,0.35);
-}
-
-button:hover, .btn:hover {
-  background: var(--blue2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(26,111,255,0.5);
-}
-
-/* ════════════════════════════════════════════════
-   PÁGINA TREINOS — Grid de Vídeos
-   ════════════════════════════════════════════════
-
-   Exemplo de uso no HTML (treinos.html):
-
-   <section class="treinos-section">
-     <h2 class="treinos-titulo">Treinos em Destaque</h2>
-     <p class="treinos-sub">Assista e evolua com os melhores</p>
-
-     <div class="treinos-filtros">
-       <button class="filtro-btn ativo">Todos</button>
-       <button class="filtro-btn">Peito</button>
-       <button class="filtro-btn">Costas</button>
-       <button class="filtro-btn">Pernas</button>
-     </div>
-
-     <div class="video-grid">
-       <div class="video-card">
-         <div class="video-wrapper">
-           <iframe src="https://www.youtube.com/embed/ID" allowfullscreen></iframe>
-         </div>
-         <div class="video-info">
-           <span class="video-tag">Peito</span>
-           <h3 class="video-title">Treino de Peito</h3>
-           <p class="video-desc">Série para hipertrofia.</p>
-         </div>
-       </div>
-     </div>
-   </section>
-   ════════════════════════════════════════════════ */
-
-.treinos-section {
-  max-width: 1180px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
-
-.treinos-titulo {
-  font-family: var(--display);
-  font-size: clamp(2rem, 5vw, 3rem);
+.treinos h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: #fff;
   letter-spacing: 0.1em;
-  text-align: center;
-  background: linear-gradient(180deg, #ffffff 30%, #c0c0c0 65%, #1a6fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #1a6fff;
+  padding-left: 0.8rem;
 }
 
-.treinos-titulo::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  margin: 0.5rem auto 0;
-  background: var(--blue);
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(26,111,255,0.5);
-}
-
-.treinos-sub {
-  text-align: center;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(192,192,192,0.6);
-  margin-bottom: 2rem;
-}
-
-/* Filtros */
-.treinos-filtros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.filtro-btn {
-  font-family: var(--display);
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  color: var(--silver);
-  background: transparent;
-  border: 1px solid rgba(26,111,255,0.25);
-  padding: 0.4rem 1.1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: none;
-}
-
-.filtro-btn:hover,
-.filtro-btn.ativo {
-  color: var(--white);
-  background: var(--blue);
-  border-color: var(--blue);
-  box-shadow: 0 2px 12px rgba(26,111,255,0.4);
-  transform: translateY(-1px);
-}
-
-/* Grid */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
-/* Card */
 .video-card {
-  background: var(--card);
-  border: 1px solid rgba(26,111,255,0.1);
-  border-top: 3px solid var(--blue);
-  border-radius: 5px;
+  background: #161616;
+  border-top: 3px solid #1a6fff;
+  border-radius: 4px;
   overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(26,111,255,0.3);
-}
+.video-card:hover { opacity: 0.9; }
 
-/* Wrapper 16:9 */
 .video-wrapper {
   position: relative;
-  width: 100%;
   padding-top: 56.25%;
-  background: #000;
-  overflow: hidden;
 }
 
 .video-wrapper iframe,
@@ -321,76 +125,28 @@ button:hover, .btn:hover {
   border: none;
 }
 
-/* Info */
-.video-info {
-  padding: 1rem 1.2rem 1.2rem;
+.video-card p {
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  color: #c0c0c0;
 }
 
-.video-tag {
-  display: inline-block;
-  font-family: var(--display);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  color: var(--white);
-  background: var(--blue);
-  padding: 0.12rem 0.6rem;
-  border-radius: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.video-title {
-  font-family: var(--display);
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
-  color: var(--white);
-  margin-bottom: 0.3rem;
-  line-height: 1.2;
-}
-
-.video-desc {
-  font-size: 0.88rem;
-  color: var(--silver);
-  line-height: 1.5;
-}
-
-/* ── FOOTER ─────────────────────────────────────── */
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 1.6rem;
-  background: var(--dark);
-  border-top: 3px solid var(--blue);
-}
-
-footer p {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  padding: 1.5rem;
+  background: #111;
+  border-top: 3px solid #1a6fff;
   color: rgba(192,192,192,0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-/* ── Animações ───────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-header           { animation: fadeUp 0.6s ease both; }
-nav              { animation: fadeUp 0.6s 0.1s ease both; }
-main             { animation: fadeUp 0.6s 0.2s ease both; }
-.treinos-section { animation: fadeUp 0.6s 0.2s ease both; }
-footer           { animation: fadeUp 0.6s 0.3s ease both; }
-
-/* ── Responsivo ─────────────────────────────────── */
+/* MOBILE */
 @media (max-width: 600px) {
-  nav { flex-direction: column; position: static; }
-  nav a { text-align: center; padding: 0.8rem 1rem; }
-
-  main {
-    margin: 1.5rem 0.8rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .treinos-section { padding: 0 0.8rem; }
+  nav { flex-direction: column; }
+  nav a { text-align: center; }
+  main { margin: 1rem; }
   .video-grid { grid-template-columns: 1fr; }
 }
