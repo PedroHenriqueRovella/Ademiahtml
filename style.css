@@ -236,3 +236,36 @@ footer {
         margin-right: 0;
     }
 }
+
+.video-container {
+    position: relative;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+/* MODO FULLSCREEN CUSTOM */
+.video-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 👇 AQUI É O FUNDO PERSONALIZADO */
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.video-container.fullscreen video {
+    width: auto;
+    height: 80%;
+}
