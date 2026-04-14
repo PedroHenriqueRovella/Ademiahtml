@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    
 <header>
     <h1>Bem-vindo ao meu site</h1>
     <p>Minha primeira página inicial</p>
@@ -24,11 +24,39 @@
 <main>
     <h2>Página Inicial</h2>
     <p>Esse é um exemplo simples de página inicial feita em HTML.</p>
+
+    h2>Página Inicial</h2>
+    <p>Esse é um exemplo simples de página inicial feita em HTML.</p>
+
+    <!-- Botão modo escuro -->
+    <button onclick="modoEscuro()">Modo escuro 🌙</button>
+
+    <!-- Dica de treino -->
+    <button onclick="mostrarDica()">Ver dica de treino 💪</button>
+    <p id="dica"></p>
 </main>
 
 <footer>
     <p>© 2026 - Meu Site</p>
 </footer>
+
+    <script>
+function modoEscuro() {
+    document.body.classList.toggle("dark");
+}
+
+function mostrarDica() {
+    const dicas = [
+        "Beba bastante água 💧",
+        "Mantenha a postura correta 🏋️",
+        "Não pule o aquecimento 🔥",
+        "Descanse entre séries 😴"
+    ];
+
+    const aleatoria = Math.floor(Math.random() * dicas.length);
+    document.getElementById("dica").innerText = dicas[aleatoria];
+}
+</script>
 
 </body>
 </html>
