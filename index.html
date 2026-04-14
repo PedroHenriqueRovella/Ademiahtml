@@ -23,9 +23,12 @@
 
 <main>
     <h2>Página Inicial</h2>
-    <p>Esse é um exemplo simples de página inicial feita em HTML.</p>
-    <button onclick="mostrarDica()">Ver dica de treino 💪</button>
-    <p id="dica"></p>
+    <p>Bem-vindo ao Genius Gym! Clique abaixo para gerar seu treino do dia.</p>
+
+    <button onclick="gerarTreino()">🎲 Gerar Treino do Dia</button>
+    <button onclick="limparTreino()" class="btn-limpar">🗑️ Limpar</button>
+
+    <div id="treino-container"></div>
 </main>
 
 <footer>
@@ -39,15 +42,82 @@ function modoEscuro() {
     botao.innerText = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
-function mostrarDica() {
-    const dicas = [
-        "Beba bastante água 💧",
-        "Mantenha a postura correta 🏋️",
-        "Não pule o aquecimento 🔥",
-        "Descanse entre séries 😴"
-    ];
-    const aleatoria = Math.floor(Math.random() * dicas.length);
-    document.getElementById("dica").innerText = dicas[aleatoria];
+const exercicios = {
+    "🦵 Pernas": [
+        "Agachamento livre — 4x12",
+        "Leg press 45° — 3x15",
+        "Cadeira extensora — 3x12",
+        "Cadeira flexora — 3x12",
+        "Panturrilha em pé — 4x20",
+        "Avanço com halteres — 3x10 cada"
+    ],
+    "💪 Peito": [
+        "Supino reto com barra — 4x10",
+        "Supino inclinado com halteres — 3x12",
+        "Crucifixo na máquina — 3x15",
+        "Flexão de braços — 3x20",
+        "Crossover — 3x15"
+    ],
+    "🔙 Costas": [
+        "Puxada frontal — 4x12",
+        "Remada curvada — 4x10",
+        "Remada unilateral — 3x12 cada",
+        "Pulldown — 3x15",
+        "Hiperextensão — 3x15"
+    ],
+    "🙆 Ombros": [
+        "Desenvolvimento com halteres — 4x12",
+        "Elevação lateral — 3x15",
+        "Elevação frontal — 3x12",
+        "Encolhimento de ombros — 3x15",
+        "Crucifixo invertido — 3x15"
+    ],
+    "💥 Braços": [
+        "Rosca direta com barra — 4x12",
+        "Rosca martelo — 3x12",
+        "Tríceps pulley — 4x12",
+        "Tríceps testa — 3x12",
+        "Rosca concentrada — 3x10 cada"
+    ],
+    "🔥 Abdômen": [
+        "Abdominal supra — 4x20",
+        "Prancha — 4x 40 segundos",
+        "Abdominal infra — 3x15",
+        "Oblíquo — 3x15 cada lado",
+        "Crunch na máquina — 3x15"
+    ]
+};
+
+function gerarTreino() {
+    const grupos = Object.keys(exercicios);
+    const sorteados = grupos.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+    let html = "<h3 class='treino-titulo'>💪 Seu Treino de Hoje</h3>";
+
+    sorteados.forEach(grupo => {
+        const lista = [...exercicios[grupo]];
+        const exercSorteados = lista.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+        html += `<div class="treino-grupo">`;
+        html += `<strong class="treino-grupo-nome">${grupo}</strong>`;
+        html += `<ul class="treino-lista">`;
+        exercSorteados.forEach(ex => {
+            html += `<li>${ex}</li>`;
+        });
+        html += `</ul></div>`;
+    });
+
+    html += `<p class="treino-aviso">⚡ Aquecimento de 5 min antes e alongamento de 5 min depois!</p>`;
+
+    const container = document.getElementById("treino-container");
+    container.innerHTML = html;
+    container.style.display = "block";
+}
+
+function limparTreino() {
+    const container = document.getElementById("treino-container");
+    container.innerHTML = "";
+    container.style.display = "none";
 }
 </script>
 
