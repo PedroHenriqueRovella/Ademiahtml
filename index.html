@@ -92,7 +92,7 @@ function gerarTreino() {
     const grupos = Object.keys(exercicios);
     const sorteados = grupos.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-    let html = "<h3 class='treino-titulo'>💪 Seu Treino de Hoje</h3>";
+    let html = "<h3 class='treino-titulo'>💪 Seu Treino de Hoje<br></h3>";
 
     sorteados.forEach(grupo => {
         const lista = [...exercicios[grupo]];
