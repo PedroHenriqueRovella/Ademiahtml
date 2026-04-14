@@ -5,15 +5,15 @@
     box-sizing: border-box;
 }
 
-/* 🌞 MODO CLARO (PADRÃO) */
+/* Corpo (modo claro padrão) */
 body {
     background-color: white;
-    color: black; /* ← estava "white" — texto invisível no fundo branco */
+    color: black;
     font-family: Arial, sans-serif;
     transition: 0.3s;
 }
 
-/* Header */
+/* Cabeçalho */
 header {
     background-color: #f2f2f2;
     padding: 20px;
@@ -35,7 +35,7 @@ nav a {
     font-weight: bold;
 }
 
-/* Conteúdo */
+/* Conteúdo principal */
 main {
     padding: 30px;
     text-align: center;
@@ -49,7 +49,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     background-color: #ccc;
-    color: black; /* ← adicionado para garantir legibilidade */
+    font-size: 14px;
 }
 
 /* Rodapé */
@@ -60,43 +60,44 @@ footer {
     margin-top: 30px;
 }
 
-/* Botão topo direito */
+/* Botão do tema (canto superior direito) */
 #btnTema {
     position: fixed;
     top: 20px;
     right: 20px;
     background-color: #ddd;
-    color: black; /* ← adicionado */
 }
 
-/* 🌙 MODO ESCURO (SÓ ATIVA QUANDO CLICAR) */
-body.dark {
+/* ===================== */
+/* 🌙 MODO ESCURO */
+/* ===================== */
+
+.dark {
     background-color: #111;
     color: white;
 }
 
-body.dark header {
+.dark header {
     background-color: #222;
 }
 
-body.dark nav {
+.dark nav {
     background-color: #1a1a1a;
 }
 
-body.dark footer {
+.dark footer {
     background-color: #222;
 }
 
-body.dark nav a {
+.dark nav a {
     color: white;
 }
 
-body.dark button {
+.dark button {
     background-color: #333;
     color: white;
 }
 
-body.dark #btnTema {
+.dark #btnTema {
     background-color: #333;
-    color: white;
 }
