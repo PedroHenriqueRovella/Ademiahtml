@@ -183,3 +183,54 @@ body.dark .video-card { background-color: #161616; border-color: #222; box-shado
 body.dark .video-card p { color: #c0c0c0; }
 body.dark .video-wrapper { background-color: #000; }
 body.dark footer { background-color: #111111; }
+
+/* BOTÃO LIMPAR */
+.btn-limpar {
+    background-color: #e74c3c;
+    margin-left: 10px;
+}
+.btn-limpar:hover {
+    background-color: #c0392b;
+}
+
+/* TREINO GERADO */
+#treino-container {
+    margin-top: 25px;
+    text-align: left;
+    display: none;
+}
+
+.treino-titulo {
+    margin-bottom: 15px;
+    color: #1a6fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.treino-grupo {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(26, 111, 255, 0.08);
+    border-left: 4px solid #1a6fff;
+    border-radius: 4px;
+}
+
+.treino-grupo-nome {
+    font-size: 16px;
+}
+
+.treino-lista {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.treino-lista li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.treino-aviso {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #888;
+}
