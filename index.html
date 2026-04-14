@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    
+
+<!-- Botão no topo direito -->
+<button id="btnTema" onclick="modoEscuro()">🌙</button>
+
 <header>
     <h1>Bem-vindo ao meu site</h1>
     <p>Minha primeira página inicial</p>
@@ -25,9 +28,6 @@
     <h2>Página Inicial</h2>
     <p>Esse é um exemplo simples de página inicial feita em HTML.</p>
 
-    <!-- Botão modo escuro -->
-    <button onclick="modoEscuro()">Modo escuro 🌙</button>
-
     <!-- Dica de treino -->
     <button onclick="mostrarDica()">Ver dica de treino 💪</button>
     <p id="dica"></p>
@@ -40,6 +40,14 @@
 <script>
 function modoEscuro() {
     document.body.classList.toggle("dark");
+
+    const botao = document.getElementById("btnTema");
+
+    if (document.body.classList.contains("dark")) {
+        botao.innerText = "☀️";
+    } else {
+        botao.innerText = "🌙";
+    }
 }
 
 function mostrarDica() {
