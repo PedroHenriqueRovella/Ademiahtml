@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página Inicial</title>
-
+    <title>Genius Gym</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Botão no topo direito -->
 <button id="btnTema" onclick="modoEscuro()">🌙</button>
 
 <header>
-    <h1>Bem-vindo ao meu site</h1>
-    <p>Minha primeira página inicial</p>
+    <h1>Genius Gym</h1>
+    <p>Treine com inteligência</p>
 </header>
 
-<nav> 
+<nav>
     <a href="#">Início</a>
     <a href="index/treinos.html">Treino</a>
     <a href="#">Contato</a>
@@ -27,27 +24,19 @@
 <main>
     <h2>Página Inicial</h2>
     <p>Esse é um exemplo simples de página inicial feita em HTML.</p>
-
-    <!-- Dica de treino -->
     <button onclick="mostrarDica()">Ver dica de treino 💪</button>
     <p id="dica"></p>
 </main>
 
 <footer>
-    <p>© 2026 - Meu Site</p>
+    <p>© 2026 - Genius Gym</p>
 </footer>
 
 <script>
 function modoEscuro() {
     document.body.classList.toggle("dark");
-
     const botao = document.getElementById("btnTema");
-
-    if (document.body.classList.contains("dark")) {
-        botao.innerText = "☀️";
-    } else {
-        botao.innerText = "🌙";
-    }
+    botao.innerText = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
 function mostrarDica() {
@@ -57,7 +46,6 @@ function mostrarDica() {
         "Não pule o aquecimento 🔥",
         "Descanse entre séries 😴"
     ];
-
     const aleatoria = Math.floor(Math.random() * dicas.length);
     document.getElementById("dica").innerText = dicas[aleatoria];
 }
