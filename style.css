@@ -236,3 +236,8 @@ footer {
         margin-right: 0;
     }
 }
+.dark header,
+.dark nav,
+.dark footer {
+    background-color: #222;
+}
