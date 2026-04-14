@@ -1,99 +1,243 @@
-/* Reset básico */
+/* GENIUS GYM - style.css */
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 🌞 MODO CLARO (PADRÃO) */
+/* BODY */
 body {
-    background-color: white;
-    color: white;
+    background-color: #0a0a0a;
+    color: #c0c0c0;
     font-family: Arial, sans-serif;
-    transition: 0.3s;
+    font-size: 16px;
 }
 
-/* Header */
+/* HEADER */
 header {
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-color: #111111;
     text-align: center;
+    padding: 40px;
+    border-bottom: 3px solid #1a6fff;
 }
 
-/* Menu */
+header h1 {
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+header p {
+    color: #1a6fff;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+/* NAV */
 nav {
-    background-color: #e0e0e0;
-    padding: 10px;
+    background-color: #0a0a0a;
     text-align: center;
+    padding: 0;
+    border-bottom: 2px solid #1a6fff;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
 }
 
-/* Links */
 nav a {
-    margin: 0 15px;
+    display: inline-block;
+    color: #c0c0c0;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    padding: 16px 30px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* Conteúdo */
+nav a:hover {
+    background-color: #1a6fff;
+    color: #ffffff;
+}
+
+/* MAIN */
 main {
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #161616;
     padding: 30px;
-    text-align: center;
+    border-top: 3px solid #1a6fff;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 4px;
+    box-shadow: 4px 4px 20px #000000;
 }
 
-/* Botões */
-button {
-    margin-top: 15px;
-    padding: 10px 15px;
+main h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-left: 4px solid #1a6fff;
+    padding-left: 12px;
+}
+
+main p {
+    color: #c0c0c0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+main a {
+    color: #1a6fff;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* SECAO TREINOS */
+.treinos {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.treinos h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    border-left: 4px solid #1a6fff;
+    padding-left: 12px;
+}
+
+/* GRID DE VIDEOS */
+.video-grid {
+    display: inline-block;
+    width: 100%;
+}
+
+.video-card {
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    background-color: #161616;
+    border-top: 3px solid #1a6fff;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 4px;
+    box-shadow: 3px 3px 12px #000000;
+    overflow: hidden;
+}
+
+.video-card:hover {
+    opacity: 0.85;
+}
+
+/* Wrapper 16:9 */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    background-color: #000;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 8px;
+}
+
+.video-card p {
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #c0c0c0;
+}
+
+/* clearfix para float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* BOTAO */
+button {
+    background-color: #1a6fff;
+    color: #ffffff;
+    border-style: none;
+    padding: 12px 28px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     cursor: pointer;
-    background-color: #ccc;
+    border-radius: 3px;
+    margin-top: 10px;
 }
 
-/* Rodapé */
+button:hover {
+    background-color: #3d8bff;
+}
+
+/* FOOTER */
 footer {
-    background-color: #f2f2f2;
-    padding: 15px;
+    background-color: #111111;
     text-align: center;
-    margin-top: 30px;
+    padding: 25px;
+    border-top: 3px solid #1a6fff;
+    color: #555555;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* Botão topo direito */
-#btnTema {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #ddd;
-}
+/* RESPONSIVO */
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        padding: 12px;
+    }
 
-/* 🌙 MODO ESCURO (SÓ ATIVA QUANDO CLICAR) */
-.dark {
-    background-color: #111;
-    color: white;
-}
+    main {
+        width: 95%;
+        padding: 20px 15px;
+    }
 
-.dark header {
-    background-color: #222;
-}
+    .treinos {
+        width: 95%;
+    }
 
-.dark nav {
-    background-color: #1a1a1a;
+    .video-card {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
 }
-
+.dark header,
+.dark nav,
 .dark footer {
     background-color: #222;
-}
-
-.dark nav a {
-    color: white;
-}
-
-.dark button {
-    background-color: #333;
-    color: white;
-}
-
-.dark #btnTema {
-    background-color: #333;
 }
