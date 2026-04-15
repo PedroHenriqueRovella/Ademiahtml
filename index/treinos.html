@@ -16,6 +16,14 @@
     <a href="../index.html">Voltar</a>
 </nav>
 
+<!-- Modo escuro -->
+<script>
+function modoEscuro() {
+    document.body.classList.toggle("dark");
+    const botao = document.getElementById("btnTema");
+    botao.innerText = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
 <!-- HEADER -->
 <header>
     <h1>Treinos de Academia</h1>
